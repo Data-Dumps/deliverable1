@@ -11,11 +11,13 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 # Plotting dinosaur data
 
 # uploading dataset and packages
+  link="https://github.com/Data-Dumps/deliverable1/raw/main/dinodata.xlsx"
 
-    library(readxl)
-    dinodata <- read_excel("PUBPOL 543/dinodata.xlsx")
-    View(dinodata)
-    library(ggplot2)
+  #call library
+  library(rio) #note: Jose wants us to omit the install.packages line
+  
+  dinodata=import(link)
+
 
 # Alex's code
     
@@ -36,7 +38,7 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
     plot2=plot1 + labs(title=titleText)
     plot2
 
-# Now sorting dinosaur counts 
+# sorting dinosaur counts least to greatest
 
     tableFreqSorted=tableFreq[order(tableFreq$Percent),]
     tableFreqSorted
@@ -56,7 +58,7 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
     plot2
     
     
-    
+# publish page fully on github by going to repo settings > pages > switch branch to main > save
     
     
 ```
