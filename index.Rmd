@@ -68,8 +68,6 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
                                       round(tableFreq$Count,2),""))
     
 
-    plot3
-    
         
 # publish page fully on github by going to repo settings > pages > switch branch to main > save
     
