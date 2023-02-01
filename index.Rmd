@@ -34,10 +34,10 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
     library(ggplot2)
     base= ggplot(data=tableFreq,
                  aes(x=Country,
-                     y=Count)) 
+                   y=Count)) 
     plot1=base+geom_bar(stat='identity')+theme(axis.text.x = element_text(angle = 90))
     titleText='Where were the Dinosaurs?'
-    plot2=plot1 + labs(title=titleText)
+    plot2=plot1 + labs(title=titleText, x="")
     plot2
 
 # sorting dinosaur counts least to greatest
@@ -56,10 +56,21 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
     base= base + theme_classic()
     plot1=base+geom_bar(stat='identity')+theme(axis.text.x = element_text(angle = 90))
     titleText='Where were the Dinosaurs?'
-    plot2=plot1 + labs(title=titleText)
+    plot2=plot1 + labs(title=titleText,x="")
     plot2
     
+# labeling counts of dinos for top six countries
     
+    plot3=plot2 + geom_text(vjust=0, #hjust if flipping
+                          size = 3,
+                          aes(y = Count,
+                              label = ifelse(tableFreq$Count>8),
+                                      round(tableFreq$Count,2),""))
+    
+
+    plot3
+    
+        
 # publish page fully on github by going to repo settings > pages > switch branch to main > save
     
     
